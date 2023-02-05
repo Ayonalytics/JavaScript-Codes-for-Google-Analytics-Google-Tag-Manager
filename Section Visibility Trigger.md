@@ -1,16 +1,16 @@
 ```Javascript
 <script>
 // Select all section elements with data-element_type="section"
-const sections = document.querySelectorAll("section[data-element_type='section']");
+var sections = document.querySelectorAll("section[data-element_type='section']");
 
 // Create an IntersectionObserver to monitor visibility of sections
-const observer = new IntersectionObserver((entries) => {
+var observer = new IntersectionObserver(function(entries) {
   // Loop through all the entries (the sections being monitored)
-  entries.forEach((entry) => {
+  entries.forEach(function(entry) {
     // If the entry (section) is intersecting (visible)
     if (entry.isIntersecting) {
       // Get the id of the section
-      const sectionId = entry.target.id;
+      var sectionId = entry.target.id;
       // Check if the section has an id
       if (sectionId) {
         // Create or access the data layer for Google Analytics
@@ -28,8 +28,8 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 // Loop through all sections and observe each one
-sections.forEach((section) => {
-  observer.observe(section);
-});
+for (var i = 0; i < sections.length; i++) {
+  observer.observe(sections[i]);
+}
 </script>
 ```

@@ -1,4 +1,3 @@
-```Javascript
 <script>
 // Select all section elements with data-element_type="section"
 var sections = document.querySelectorAll("section[data-element_type='section']");
@@ -32,4 +31,3 @@ for (var i = 0; i < sections.length; i++) {
   observer.observe(sections[i]);
 }
 </script>
-```
